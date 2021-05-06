@@ -1,8 +1,6 @@
 {
-  "name": "tower-stack-game",
+  "name": "stack-game",
   "version": "1.0.0",
-  "description": "Tower stack Game",
-  "main": "index.js",
   "scripts": {
     "build": "browserify stack-game.js -o build/bundle.js",
     "start": "budo stack-game.js:build/bundle.js --port 8000",
