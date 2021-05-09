@@ -2,8 +2,7 @@
   "name": "stack-game",
   "version": "1.0.0",
   "scripts": {
-    "build": "browserify stack-game.js -o build/bundle.js",
-    "start": "budo stack-game.js:build/bundle.js --port 8000",
+    "start": "budo  --port 8000",
     "clean": "rm build/bundle.js"
   },
   "author": "",

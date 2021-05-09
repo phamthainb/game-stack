@@ -9,6 +9,8 @@ var clock; // time
 var bricks;
 var stackHeight;
 var warm = document.getElementById("warm");
+
+// dữ liệu của game
 var gameState = {
   score: 0,
   scene: "start",
@@ -16,6 +18,7 @@ var gameState = {
   maxCombo: 0,
 };
 
+// mã các màu
 var rainBowColors = [
   0xd358f7,
   0xfa5858,
@@ -25,6 +28,7 @@ var rainBowColors = [
   0x58faf4,
   0x5882fa,
 ];
+// mã các màu
 var palette_summer = {
   yellow: 0xfff489,
   white: 0xd8d8d8,
@@ -34,10 +38,14 @@ var palette_summer = {
   red: 0xffb8b8,
 };
 
-createScene();
-animate(); // start the animation loop!
+/** MAIN **/
+// khởi tạo khung cảnh
+main();
+// start the animation loop
+animate();
+/** END MAIN **/
 
-function createScene() {
+function main() {
   // define the following global variables
   // scene, camera, renderer, light1, light2
   initScene();
@@ -56,9 +64,12 @@ function createScene() {
   addBrick();
 }
 
+var lastUpdate = new Date();
 function animate() {
+  const newDate = new Date();
+
   switch (gameState.scene) {
-    case "start":
+    case "start": {
       var deltaTime = clock.getDelta();
       if (!bricks[stackHeight].isDropped) {
         if (camera.position.y - bricks[stackHeight].mesh.position.y <= 100) {
@@ -75,15 +86,26 @@ function animate() {
       scene.simulate();
       renderer.render(scene, camera);
       break;
-    case "end":
+    }
+    case "end": {
       scene.simulate();
       renderer.render(scene, camera);
       break;
+    }
     default:
   }
-
+  // console.log("run");
   requestAnimationFrame(animate);
 }
+
+// document.addEventListener("visibilitychange", (event) => {
+//   if (document.visibilityState == "visible") {
+//     console.log("tab is active");
+//     animate();
+//   } else {
+//     console.log("tab is inactive");
+//   }
+// });
 
 function initPysijs() {
   Physijs.scripts.worker = "./lib/physijs_worker.js";
@@ -254,6 +276,8 @@ function addBrick() {
   }
 
   scene.add(bricks[stackHeight].mesh);
+
+  // console.log("bricks", bricks, "stackHeight", stackHeight);
 }
 
 function moveBrick(brick, deltaTime) {
@@ -449,7 +473,7 @@ function keydown(event) {
     while (scene.children.length > 0) {
       scene.remove(scene.children[0]);
     }
-    createScene();
+    main();
     gameState.scene = "start";
     gameState.score = 0;
     gameState.combo = 0;
@@ -477,7 +501,7 @@ function handleButtonEvent(id) {
         scene.remove(scene.children[0]);
       }
       playGameMusic("restart.mp3");
-      createScene();
+      main();
       gameState.scene = "start";
       gameState.score = 0;
       gameState.combo = 0;

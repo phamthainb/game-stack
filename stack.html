@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Game Stack Playing</title>
+    <title>Nhóm 1</title>
     <meta charset="utf-8" />
     <link
       href="https://fonts.googleapis.com/css?family=Rajdhani:300|Roboto:300"
@@ -13,10 +13,20 @@
     <script type="text/javascript" src="lib/stats.js"></script>
     <script type="text/javascript" src="lib/physi.js"></script>
     <link rel="stylesheet" href="../assets/stack-style.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5QFQZYKT9D"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-5QFQZYKT9D");
+    </script>
   </head>
-  <style>
-   
-  </style>
+  <style></style>
   <body>
     <div id="warm" class="overlay"></div>
     <div id="Stats-output"></div>
@@ -36,6 +46,7 @@
       </ul>
       <p>- or press R to restart -</p>
     </div>
-    <script type="text/javascript" src="build/bundle.js"></script>
+
+    <script type="text/javascript" src="stack-game.js"></script>
   </body>
 </html>
