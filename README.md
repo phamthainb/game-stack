@@ -10,6 +10,7 @@ Yêu cầu : Nodejs, npm
 - open http://192.168.25.108:8000/
 
 ### sử dụng git :
+
 - k đẩy code vào master, chỉ đẩy lên nhánh của mình
 - git add . && git commit -m "message commit" && git push : để đẩy code lên remote
 - git checkout -b "Tên Nhánh" : Tạo ra nhánh code mới
@@ -26,4 +27,12 @@ Yêu cầu : Nodejs, npm
 
 => Mục tiêu : hiểu đc các thành phần cơ bản của thư viện, cách thức hoạt động của từng khái niệm. Anh em code lại theo chức năng (hiểu) phần mình đảm nhận, k bắt buộc phải giống như code mẫu.
 
-...
+==============
+
+## Nội dung Slide (Công, Ngọc, Toàn - hạn 17/5/2021)
+
+0. Giới thiệu c3, mội số nd về c3
+1. Game Stack
+   1. Tạo bối cảnh, camera, light
+   2. Cách tạo ra 1 khối, cách brick di chuyển
+   3. Tính toán khối bị cut ntn (lấy 1 số hình trong slide của Quyền), xếp các khối lên nhau

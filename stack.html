@@ -3,8 +3,9 @@
   <head>
     <title>Nhóm 1</title>
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css?family=Rajdhani:300|Roboto:300"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
     <script type="text/javascript" src="lib/three.js"></script>
@@ -12,7 +13,7 @@
     <script type="text/javascript" src="lib/MTLLoader.js"></script>
     <script type="text/javascript" src="lib/stats.js"></script>
     <script type="text/javascript" src="lib/physi.js"></script>
-    <link rel="stylesheet" href="../assets/stack-style.css" />
+    <link rel="stylesheet" href="./assets/stack-style.css" />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-5QFQZYKT9D"
@@ -26,25 +27,29 @@
       gtag("config", "G-5QFQZYKT9D");
     </script>
   </head>
-  <style></style>
   <body>
     <div id="warm" class="overlay"></div>
     <div id="Stats-output"></div>
     <div id="WebGL-output"></div>
     <div id="canvas-area"></div>
+
     <div id="lose-message">
-      <h1>Game Over</h1>
+      <h1>Chết dòi</h1>
       <div>
-        <h2 style="font-size: 30px">[Your Score]</h2>
-        <h2 id="score" style="font-size: 30px"></h2>
-        <h2 style="font-size: 30px">[Max Combo]</h2>
-        <h2 id="maxCombo" style="font-size: 30px"></h2>
+        <h2 style="font-size: 30px">
+          Điểm của bạn:
+          <span id="score" style="font-size: 30px"></span>
+        </h2>
+
+        <h2 style="font-size: 30px">
+          Combo:
+          <span id="maxCombo" style="font-size: 30px"></span>
+        </h2>
       </div>
       <ul>
-        <button id="button-menu">menu</button>
-        <button id="button-restart">restart</button>
+        <button id="button-menu">Quay lại</button>
+        <button id="button-restart">Chiến tiếp</button>
       </ul>
-      <p>- or press R to restart -</p>
     </div>
 
     <script type="text/javascript" src="stack-game.js"></script>
