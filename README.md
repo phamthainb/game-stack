@@ -18,8 +18,12 @@ Yêu cầu : Nodejs, npm
 5. Thay đổi góc nhìn (view, camera)
 6. Review
 
-=======
+==============
 
-1. Tạo bối cảnh, camera, light
-2. các khối
-3. xếp các khối lên nhau
+## Nội dung Slide
+
+0. Giới thiệu c3, mội số nd về c3
+1. Game Stack
+   1. Tạo bối cảnh, camera, light
+   2. Cách tạo ra 1 khối, cách brick di chuyển
+   3. Tính toán khối bị cut ntn (lấy 1 số hình trong slide của Quyền), xếp các khối lên nhau
