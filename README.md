@@ -17,3 +17,9 @@ Yêu cầu : Nodejs, npm
 4. Cách xếp chồng các khối lên nhau
 5. Thay đổi góc nhìn (view, camera)
 6. Review
+
+=======
+
+1. Tạo bối cảnh, camera, light
+2. các khối
+3. xếp các khối lên nhau
