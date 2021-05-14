@@ -450,3 +450,12 @@ function cheers() {
   playGameMusic(`${gameState.combo % 8}.mp3`);
   gameState.score += gameState.combo;
 }
+
+document.addEventListener("visibilitychange", (event) => {
+  if (document.visibilityState == "visible") {
+    // console.log("tab is active");
+  } else {
+    // console.log("tab is inactive");
+    alert("Đang chơi game mà đi đâu đấy, F5 lại đeê");
+  }
+});
