@@ -65,6 +65,7 @@ class Brick {
     this.mesh.receiveShadow = true;
   }
 }
+
 createScene();
 animate(); // start the animation loop!
 
@@ -134,7 +135,14 @@ function createScene() {
     .addEventListener("click", function (event) {
       window.location.href = "index.html";
     });
-
+  //btn mobile thay space
+  document.getElementById("body").addEventListener("click", function (event) {
+    // console.log("click", window.innerWidth);
+    if (gameState.scene == "start" && window.innerWidth < 992) {
+      bricks[stackHeight].isDropped = true;
+      return;
+    }
+  });
   // thêm khối trụ base
   var foundation = new Foundation();
   scene.add(foundation.mesh);

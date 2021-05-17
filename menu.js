@@ -130,6 +130,5 @@ function handleButtonEvent(id) {
     button.addEventListener("click", function (event) {
       window.location.href = "stack.html";
     });
-  } else if (id == "button-ins") {
   }
 }

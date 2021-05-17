@@ -100,3 +100,12 @@ canvas {
 button {
   z-index: 2;
 }
+
+#touch-btn {
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+}
