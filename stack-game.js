@@ -112,29 +112,7 @@ function createScene() {
 
   //! listen key press
   window.addEventListener("keydown", keydown);
-  // click restart
-  document
-    .getElementById("button-restart")
-    .addEventListener("click", function (event) {
-      canvas.style.filter = "";
-      message.style.display = "none";
-      // clear three js scene
-      while (scene.children.length > 0) {
-        scene.remove(scene.children[0]);
-      }
-      playGameMusic("restart.mp3");
-      createScene();
-      gameState.scene = "start";
-      gameState.score = 0;
-      gameState.combo = 0;
-      gameState.maxCombo = 0;
-    });
-  // click to menu
-  document
-    .getElementById("button-menu")
-    .addEventListener("click", function (event) {
-      window.location.href = "index.html";
-    });
+
   //btn mobile thay space
   document.getElementById("body").addEventListener("click", function (event) {
     // console.log("click", window.innerWidth);
@@ -386,6 +364,33 @@ function keydown(event) {
     bricks[stackHeight].isDropped = true;
     return;
   }
+}
+
+// click restart
+function btnRestart() {
+  if (window.innerWidth > 991) {
+    console.log("click");
+    let message = document.getElementById("lose-message");
+    let canvas = document.getElementById("canvas-area");
+    canvas.style.filter = "";
+    message.style.display = "none";
+    // clear three js scene
+    while (scene.children.length > 0) {
+      scene.remove(scene.children[0]);
+    }
+    playGameMusic("restart.mp3");
+    createScene();
+    gameState.scene = "start";
+    gameState.score = 0;
+    gameState.combo = 0;
+    gameState.maxCombo = 0;
+  } else {
+    window.location.reload();
+  }
+}
+// click to menu
+function btnMenu() {
+  window.location.href = "index.html";
 }
 
 function animate() {
