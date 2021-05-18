@@ -114,13 +114,28 @@ function createScene() {
   window.addEventListener("keydown", keydown);
 
   //btn mobile thay space
-  $("body").on("click", function (event) {
-    // console.log("click", window.innerWidth);
-    if (gameState.scene == "start" && window.innerWidth < 992) {
-      bricks[stackHeight].isDropped = true;
-      return;
+  var ua = navigator.userAgent.toLowerCase();
+  if (ua.indexOf("safari") != -1) {
+    if (ua.indexOf("chrome") > -1) {
+      $(document).on("click", function (event) {
+        // console.log("click", window.innerWidth);
+        if (gameState.scene == "start" && window.innerWidth < 992) {
+          // alert("click");
+          bricks[stackHeight].isDropped = true;
+          return;
+        }
+      });
+    } else {
+      $(document).on("touchstart", function (event) {
+        // console.log("click", window.innerWidth);
+        if (gameState.scene == "start" && window.innerWidth < 992) {
+          // alert("click");
+          bricks[stackHeight].isDropped = true;
+          return;
+        }
+      });
     }
-  });
+  }
 
   // thêm khối trụ base
   var foundation = new Foundation();
