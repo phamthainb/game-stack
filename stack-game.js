@@ -114,13 +114,14 @@ function createScene() {
   window.addEventListener("keydown", keydown);
 
   //btn mobile thay space
-  document.getElementById("body").addEventListener("click", function (event) {
+  $("body").on("click", function (event) {
     // console.log("click", window.innerWidth);
     if (gameState.scene == "start" && window.innerWidth < 992) {
       bricks[stackHeight].isDropped = true;
       return;
     }
   });
+
   // thêm khối trụ base
   var foundation = new Foundation();
   scene.add(foundation.mesh);
@@ -448,12 +449,16 @@ function playGameMusic(soundfile) {
   camera.add(listener);
   var sound = new THREE.Audio(listener);
   var audioLoader = new THREE.AudioLoader();
-  audioLoader.load("/game-stack/sounds/" + soundfile, function (buffer) {
-    sound.setBuffer(buffer);
-    sound.setLoop(false);
-    sound.setVolume(0.05);
-    sound.play();
-  });
+  window.l;
+  audioLoader.load(
+    "https://phamthainb.github.io/game-stack/sounds/" + soundfile,
+    function (buffer) {
+      sound.setBuffer(buffer);
+      sound.setLoop(false);
+      sound.setVolume(0.05);
+      sound.play();
+    }
+  );
 }
 
 function cheers() {
