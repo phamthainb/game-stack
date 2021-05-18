@@ -448,7 +448,7 @@ function playGameMusic(soundfile) {
   camera.add(listener);
   var sound = new THREE.Audio(listener);
   var audioLoader = new THREE.AudioLoader();
-  audioLoader.load("/game-stacks/sounds/" + soundfile, function (buffer) {
+  audioLoader.load("/game-stack/sounds/" + soundfile, function (buffer) {
     sound.setBuffer(buffer);
     sound.setLoop(false);
     sound.setVolume(0.05);
